@@ -5,6 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'python:2-alpine'
+                    args '-it --entrypoint=/bin/sh'
                 }
             }
             steps {
@@ -30,6 +31,7 @@ pipeline {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-linux:python2'
+                    args '-it --entrypoint=/bin/sh' 
                 }
             }
             steps {
